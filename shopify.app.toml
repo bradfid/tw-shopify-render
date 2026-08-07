@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "2c2d613cf1467acd33c7ae91545018fd"
-application_url = "https://tally-wish.onrender.com"
+application_url = "https://tw-shopify-render.onrender.com"
 embedded = true
 name = "TallyWish"
 
@@ -34,7 +34,7 @@ name = "Description"
 type = "multi_line_text_field"
 
 [app_proxy]
-url    = "https://tally-wish.onrender.com/api/tallywish-settings"
+url    = "https://tw-shopify-render.onrender.com/api/tallywish-settings"
 subpath = "tallywish-settings"
 prefix  = "apps"
 
@@ -51,10 +51,10 @@ api_version = "2026-07"
 
 [[webhooks.subscriptions]]
 compliance_topics = ["customers/data_request", "customers/redact", "shop/redact"]
-uri = "https://tally-wish.onrender.com/webhooks"
+uri = "https://tw-shopify-render.onrender.com/webhooks"
 
 [auth]
-redirect_urls = [ "https://tally-wish.onrender.com/api/auth" ]
+redirect_urls = [ "https://tw-shopify-render.onrender.com/api/auth" ]
 
 [build]
 automatically_update_urls_on_dev = true

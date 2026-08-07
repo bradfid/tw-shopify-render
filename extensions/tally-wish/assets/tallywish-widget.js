@@ -96,6 +96,7 @@
   /* ── Floating icon ───────────────────────────────────────────── */
 
   function injectFloating() {
+    if (!isProductPage()) return;
     if (document.getElementById("tw-float")) return;
 
     const btn = document.createElement("div");
@@ -243,7 +244,7 @@
 
     clearTimeout(_retryTimer);
 
-    ["tw-btn", "tw-btn-wrapper"].forEach((id) => {
+    ["tw-btn", "tw-btn-wrapper", "tw-float"].forEach((id) => {
       const el = document.getElementById(id);
       if (el) el.remove();
     });
