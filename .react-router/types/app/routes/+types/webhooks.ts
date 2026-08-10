@@ -2,10 +2,10 @@
 
 import type { GetInfo, GetAnnotations } from "react-router/internal";
 
-type Module = typeof import("../webhooks.app.scopes_update.js")
+type Module = typeof import("../webhooks.js")
 
 type Info = GetInfo<{
-  file: "routes/webhooks.app.scopes_update.jsx",
+  file: "routes/webhooks.jsx",
   module: Module
 }>
 
@@ -15,9 +15,6 @@ type Matches = [{
 }, {
   id: "routes/webhooks";
   module: typeof import("../webhooks.js");
-}, {
-  id: "routes/webhooks.app.scopes_update";
-  module: typeof import("../webhooks.app.scopes_update.js");
 }];
 
 type Annotations = GetAnnotations<Info & { module: Module, matches: Matches }>;

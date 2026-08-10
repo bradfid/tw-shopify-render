@@ -14,16 +14,19 @@ type Pages = {
   "/": {
     params: {};
   };
-  "/webhooks/app/scopes_update": {
-    params: {};
-  };
-  "/webhooks/app/uninstalled": {
-    params: {};
-  };
   "/api/tallywish-settings": {
     params: {};
   };
   "/auth/login": {
+    params: {};
+  };
+  "/webhooks": {
+    params: {};
+  };
+  "/webhooks/app/scopes_update": {
+    params: {};
+  };
+  "/webhooks/app/uninstalled": {
     params: {};
   };
   "/auth/*": {
@@ -42,15 +45,7 @@ type Pages = {
 type RouteFiles = {
   "root.jsx": {
     id: "root";
-    page: "/" | "/webhooks/app/scopes_update" | "/webhooks/app/uninstalled" | "/api/tallywish-settings" | "/auth/login" | "/auth/*" | "/app" | "/app/additional";
-  };
-  "routes/webhooks.app.scopes_update.jsx": {
-    id: "routes/webhooks.app.scopes_update";
-    page: "/webhooks/app/scopes_update";
-  };
-  "routes/webhooks.app.uninstalled.jsx": {
-    id: "routes/webhooks.app.uninstalled";
-    page: "/webhooks/app/uninstalled";
+    page: "/" | "/api/tallywish-settings" | "/auth/login" | "/webhooks" | "/webhooks/app/scopes_update" | "/webhooks/app/uninstalled" | "/auth/*" | "/app" | "/app/additional";
   };
   "routes/api.tallywish-settings.jsx": {
     id: "routes/api.tallywish-settings";
@@ -59,6 +54,18 @@ type RouteFiles = {
   "routes/auth.login/route.jsx": {
     id: "routes/auth.login";
     page: "/auth/login";
+  };
+  "routes/webhooks.jsx": {
+    id: "routes/webhooks";
+    page: "/webhooks" | "/webhooks/app/scopes_update" | "/webhooks/app/uninstalled";
+  };
+  "routes/webhooks.app.scopes_update.jsx": {
+    id: "routes/webhooks.app.scopes_update";
+    page: "/webhooks/app/scopes_update";
+  };
+  "routes/webhooks.app.uninstalled.jsx": {
+    id: "routes/webhooks.app.uninstalled";
+    page: "/webhooks/app/uninstalled";
   };
   "routes/auth.$.jsx": {
     id: "routes/auth.$";
@@ -84,10 +91,11 @@ type RouteFiles = {
 
 type RouteModules = {
   "root": typeof import("./app/root.jsx");
-  "routes/webhooks.app.scopes_update": typeof import("./app/routes/webhooks.app.scopes_update.jsx");
-  "routes/webhooks.app.uninstalled": typeof import("./app/routes/webhooks.app.uninstalled.jsx");
   "routes/api.tallywish-settings": typeof import("./app/routes/api.tallywish-settings.jsx");
   "routes/auth.login": typeof import("./app/routes/auth.login/route.jsx");
+  "routes/webhooks": typeof import("./app/routes/webhooks.jsx");
+  "routes/webhooks.app.scopes_update": typeof import("./app/routes/webhooks.app.scopes_update.jsx");
+  "routes/webhooks.app.uninstalled": typeof import("./app/routes/webhooks.app.uninstalled.jsx");
   "routes/auth.$": typeof import("./app/routes/auth.$.jsx");
   "routes/_index": typeof import("./app/routes/_index/route.jsx");
   "routes/app": typeof import("./app/routes/app.jsx");
